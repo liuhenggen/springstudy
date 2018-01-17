@@ -6,4 +6,33 @@
     <bean id="hw2" class=" com.springStudy.HelloWord">
         <property name="name" value="Timmy" />
     </bean>
+
+    <!--使用构造器注入属性可以指定参数的位置和参数的类型以区分重载的构造器-->
+    <bean id="car1" class="com.springStudy.Car">
+        <constructor-arg name="brand" value="Ford" index="0"/>
+        <constructor-arg name="corp" value="ShangHai" index="1"/>
+        <constructor-arg name="price" value="100000" index="2" />
+    </bean>
+
+    <!--属性值可以通过Value子节点进行配置，特殊字符可以使用<![CDATA[]]>包裹-->
+    <bean id="car2" class="com.springStudy.Car">
+        <constructor-arg name="brand" value="Audi"/>
+        <constructor-arg name="corp" >
+            <value><![CDATA[<Shanghai>]]></value>
+        </constructor-arg>
+        <constructor-arg name="maxSpeed" value="280"/>
+    </bean>
+
+    <bean id="car3" class="com.springStudy.Car">
+        <constructor-arg value="DaZhong"/>
+        <constructor-arg value="ShangHai"/>
+        <constructor-arg  type="int">
+            <value>300</value>
+        </constructor-arg>
+    </bean>
+    <bean id="person1" class="com.springStudy.Person">
+        <property name="name" value="LiHua"/>
+        <property name="age" value="28"/>
+        <property name="car" ref="car1"/>
+    </bean>
 </beans>
