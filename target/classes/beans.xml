@@ -35,4 +35,22 @@
         <property name="age" value="28"/>
         <property name="car" ref="car1"/>
     </bean>
+
+    <bean id="person7" class="com.springStudy.Persons">
+        <property name="name" value="Mike"/>
+        <property name="age" value="29"/>
+        <property name="cars">
+            <list>
+                <ref bean="car1"/>
+                <ref bean="car2"/>
+                <bean class="com.springStudy.Car">
+                    <constructor-arg value="DaZhong"/>
+                    <constructor-arg value="ShangHai"/>
+                    <constructor-arg type="int">
+                        <value>300</value>
+                    </constructor-arg>
+                </bean>
+            </list>
+        </property>
+    </bean>
 </beans>
