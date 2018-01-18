@@ -12,6 +12,7 @@ public class Demo {
     }
 
     public Demo(String name) {
+        System.out.println("测试提交效果");
         this.name = name;
     }
 }
